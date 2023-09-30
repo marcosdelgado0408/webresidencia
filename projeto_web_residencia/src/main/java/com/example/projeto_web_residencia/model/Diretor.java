@@ -1,23 +1,26 @@
 package com.example.projeto_web_residencia.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Diretor {
+@Table(name = "diretores")
+public class Diretor implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
+    @Column(name = "cpf_diretor")
     private long cpf;
+
 
     private String nome;
     private Date dataNascimento;
     private String endereco;
-    private String escola;
+
+    @OneToOne (mappedBy = "diretor")
+    private Escola escola;
 
     public long getCpf() {
         return cpf;
@@ -51,11 +54,11 @@ public class Diretor {
         this.endereco = endereco;
     }
 
-    public String getEscola() {
+    public Escola getEscola() {
         return escola;
     }
 
-    public void setEscola(String escola) {
+    public void setEscola(Escola escola) {
         this.escola = escola;
     }
 }

@@ -33,7 +33,6 @@ public class MateriaService {
         Materia newObj = findById(id);
 
         newObj.setNome(obj.getNome());
-        newObj.setEstudantes(obj.getEstudantes());
 
         return materiaRepository.save(newObj);
     }

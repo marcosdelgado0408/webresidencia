@@ -2,17 +2,24 @@ package com.example.projeto_web_residencia.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Materia {
+@Table(name = "materias")
+public class Materia implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
+    @Column(name = "id_materias")
     private long id;
+
     private String nome;
 
-    @ManyToMany
-    private List<Estudante> estudantes;
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "materia_estudante", joinColumns = { @JoinColumn(name =
+//    "materia_id", referencedColumnName = "id_materias")}, inverseJoinColumns = {
+//    @JoinColumn(name = "estudante_id") })
+//    private List<Estudante> estudantes;
 
     public long getId() {
         return id;
@@ -29,12 +36,5 @@ public class Materia {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public List<Estudante> getEstudantes() {
-        return estudantes;
-    }
-
-    public void setEstudantes(List<Estudante> estudantes) {
-        this.estudantes = estudantes;
-    }
+    
 }

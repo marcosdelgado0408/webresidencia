@@ -2,26 +2,32 @@ package com.example.projeto_web_residencia.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 
 @Entity
-public class Estudante{
+@Table(name = "estudantes")
+public class Estudante implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
+    @Column(name = "matricula")
     private long matricula;
 
     private String nome;
     private Date dataNascimento;
     private String endereco;
-    private String password;
-    private String login;
 
-    @ManyToMany
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "materia_estudante", joinColumns = {@JoinColumn(name =
+    "estudante_id", referencedColumnName = "matricula")}, inverseJoinColumns = {
+    @JoinColumn(name = "materia_id") })
     private List<Materia> materiasCadastradas;
+
     private int ano;
     private String nivelEnsino;
 

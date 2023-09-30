@@ -1,21 +1,35 @@
 package com.example.projeto_web_residencia.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.*;
+
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
-public class Escola {
+@Table(name = "escolas")
+public class Escola implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
+    @Column (name = "cnpj_escola")
     private long cnpj;
 
+
+
     private String nome;
-    private String diretor;
+
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "cpf_diretor")
+    private Diretor diretor;
+
     private String endereco;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Estudante> estudantes;
+
 
     public long getCnpj() {
         return cnpj;
@@ -33,11 +47,11 @@ public class Escola {
         this.nome = nome;
     }
 
-    public String getDiretor() {
+    public Diretor getDiretor() {
         return diretor;
     }
 
-    public void setDiretor(String diretor) {
+    public void setDiretor(Diretor diretor) {
         this.diretor = diretor;
     }
 
