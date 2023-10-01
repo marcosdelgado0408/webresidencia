@@ -8,17 +8,23 @@ import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @EnableWebSecurity
 @Configuration
@@ -26,12 +32,53 @@ public class SecurityConfig{
 
     RsaKeyProperties rsaKeys;
 
+    private static final String[] AUTH_WHITELIST = {
+            "/token"
+    };
+
     public SecurityConfig(RsaKeyProperties rsaKeys) {
         this.rsaKeys = rsaKeys;
     }
 
+
+    // antigo
+
+//    @Bean
+//    public InMemoryUserDetailsManager users() {
+//        return new InMemoryUserDetailsManager(
+//                User.withUsername("estudante")
+//                        .password("{noop}senhadoestudante")
+//                        .authorities("read")
+//                        .build()
+//        );
+//    }
+@Bean
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    return http
+            .csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests( auth -> {
+                auth.requestMatchers(AUTH_WHITELIST).permitAll();
+                auth.anyRequest().authenticated();
+            })
+            .oauth2ResourceServer( oauth -> oauth.jwt(Customizer.withDefaults()))
+            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            //.httpBasic(Customizer.withDefaults())
+            .build();
+}
+
+    // NOVO ADICIONADO
     @Bean
-    public InMemoryUserDetailsManager users() {
+    public AuthenticationManager authenticationManager(UserDetailsService userDetailsService){
+        var authProvider = new DaoAuthenticationProvider();
+
+        authProvider.setUserDetailsService(userDetailsService);
+
+        return new ProviderManager(authProvider);
+    }
+
+    // NOVO ADICIONADO
+    @Bean
+    public UserDetailsService users() {
         return new InMemoryUserDetailsManager(
                 User.withUsername("estudante")
                         .password("{noop}senhadoestudante")
@@ -39,19 +86,9 @@ public class SecurityConfig{
                         .build()
         );
     }
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http
-                .csrf(csrf -> csrf.disable())
-                .authorizeRequests( auth -> auth
-                        .anyRequest().authenticated()
-                )
-                .oauth2ResourceServer( oauth2 -> oauth2.jwt(Customizer.withDefaults()))
-                .sessionManagement(session ->
-                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .httpBasic(Customizer.withDefaults())
-                .build();
-    }
+
+
+
 
     @Bean
     JwtDecoder jwtDecoder() {
