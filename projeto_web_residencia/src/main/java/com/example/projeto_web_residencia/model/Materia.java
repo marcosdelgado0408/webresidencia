@@ -3,7 +3,6 @@ package com.example.projeto_web_residencia.model;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @Table(name = "materias")

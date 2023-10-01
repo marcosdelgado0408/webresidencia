@@ -2,9 +2,7 @@ package com.example.projeto_web_residencia.service;
 
 
 import com.example.projeto_web_residencia.model.Escola;
-import com.example.projeto_web_residencia.model.Estudante;
 import com.example.projeto_web_residencia.repository.EscolaRepository;
-import com.example.projeto_web_residencia.repository.EstudanteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

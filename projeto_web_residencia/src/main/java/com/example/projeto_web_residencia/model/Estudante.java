@@ -3,7 +3,6 @@ package com.example.projeto_web_residencia.model;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 

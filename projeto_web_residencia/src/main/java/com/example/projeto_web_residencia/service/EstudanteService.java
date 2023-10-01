@@ -5,7 +5,6 @@ import com.example.projeto_web_residencia.repository.EstudanteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import javax.ejb.ObjectNotFoundException;
 import java.util.Optional;
 
