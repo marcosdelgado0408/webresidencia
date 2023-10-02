@@ -5,6 +5,8 @@ import com.example.projeto_web_residencia.model.Materia;
 import com.example.projeto_web_residencia.repository.MateriaRepository;
 import com.example.projeto_web_residencia.service.MateriaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +25,9 @@ public class MateriaController {
 
 
     @GetMapping
-    public List<Materia> retornarMaterias(){
+    public Page<Materia> retornarMaterias(Pageable pageable){
 
-        return materiaRepository.findAll();
+        return materiaRepository.findAll(pageable);
     }
 
     @GetMapping(value = "/{id}")

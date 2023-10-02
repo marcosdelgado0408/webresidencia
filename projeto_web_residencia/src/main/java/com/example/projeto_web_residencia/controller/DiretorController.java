@@ -4,6 +4,8 @@ import com.example.projeto_web_residencia.model.Diretor;
 import com.example.projeto_web_residencia.repository.DiretorRepository;
 import com.example.projeto_web_residencia.service.DiretorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,9 +24,9 @@ public class DiretorController {
 
 
     @GetMapping
-    public List<Diretor> retornarDiretor(){
+    public Page<Diretor> retornarDiretor(Pageable pageable){
 
-        return DiretorRepository.findAll();
+        return DiretorRepository.findAll(pageable);
     }
 
     @GetMapping(value = "/{cpf}")

@@ -4,6 +4,8 @@ import com.example.projeto_web_residencia.model.Escola;
 import com.example.projeto_web_residencia.repository.EscolaRepository;
 import com.example.projeto_web_residencia.service.EscolaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +24,8 @@ public class EscolaController {
 
 
     @GetMapping
-    public List<Escola> retornarEscola(){
-        return escolaRepository.findAll();
+    public Page<Escola> retornarEscola(Pageable pageable){
+        return escolaRepository.findAll(pageable);
     }
 
     @GetMapping(value = "/{cnpj}")
