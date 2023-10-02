@@ -1,6 +1,8 @@
 package com.example.projeto_web_residencia.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -9,6 +11,9 @@ import java.util.List;
 
 @Entity
 @Table(name = "estudantes")
+
+@SQLDelete(sql = "UPDATE estudantes SET deleted = true WHERE matricula=?")
+@Where(clause = "deleted=false")
 public class Estudante implements Serializable {
 
     @Id
@@ -19,6 +24,8 @@ public class Estudante implements Serializable {
     private String nome;
     private Date dataNascimento;
     private String endereco;
+    private boolean deleted = Boolean.FALSE;
+
 
 
     @ManyToMany(cascade = CascadeType.ALL)
@@ -87,6 +94,11 @@ public class Estudante implements Serializable {
     }
 
 
+    public boolean isDeleted() {
+        return deleted;
+    }
 
-
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
 }

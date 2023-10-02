@@ -1,12 +1,19 @@
 package com.example.projeto_web_residencia.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import java.io.Serializable;
 import java.util.Date;
 
+
+
 @Entity
 @Table(name = "diretores")
+
+@SQLDelete(sql = "UPDATE diretores SET deleted = true WHERE cpf=?")
+@Where(clause = "deleted=false")
 public class Diretor implements Serializable {
 
     @Id
@@ -18,6 +25,8 @@ public class Diretor implements Serializable {
     private String nome;
     private Date dataNascimento;
     private String endereco;
+    private boolean deleted = Boolean.FALSE;
+
 
     @OneToOne (mappedBy = "diretor")
     private Escola escola;
@@ -60,5 +69,13 @@ public class Diretor implements Serializable {
 
     public void setEscola(Escola escola) {
         this.escola = escola;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 }

@@ -4,62 +4,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="125cd1e8-db9c-4a17-ad8d-63d06b4e5a78" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/config/RsaKeyProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/dto/LoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/certs/private.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/certs/public.pem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/src/main/java/com/example/projetodeweb/ProjetoDeWebApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/src/main/java/com/example/projetodeweb/controller/EscolaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/src/main/java/com/example/projetodeweb/model/Diretor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/src/main/java/com/example/projetodeweb/model/Escola.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/src/main/java/com/example/projetodeweb/model/Estudante.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/src/main/java/com/example/projetodeweb/model/Materia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjetoDeWeb/src/test/java/com/example/projetodeweb/ProjetoDeWebApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+    <list default="true" id="71ea402c-95f6-437f-9107-3dee5df80f64" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/AulaSpringRestApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/controller/DiretorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/controller/EscolaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/controller/EstudanteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/controller/MateriaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/model/Diretor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/model/Escola.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/model/Estudante.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/model/Materia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/repository/DiretorRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/repository/EscolaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/repository/EstudanteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/repository/MateriaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/service/DiretorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/service/EscolaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/service/EstudanteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/service/MateriaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docker-compose.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/Configurations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/ProjetoWebResidenciaApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/dto/Login.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/model/Escola.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/model/Escola.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/model/Estudante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/model/Estudante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/model/Materia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/model/Materia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/repository/EscolaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/repository/EscolaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/repository/EstudanteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/repository/EstudanteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/service/AuthenticationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/service/EscolaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/service/EscolaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/service/EstudanteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/service/EstudanteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/service/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/service/TokenService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/projeto_web_residencia/ProjetoWebResidenciaApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/AulaSpringRestApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/config/RsaKeyProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/config/RsaKeyProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/controller/CredenciaisController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/controller/PessoaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/dto/CredenciaisDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/dto/EnderecoResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/dto/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/dto/LoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/dto/PessoaMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/dto/PessoaRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/dto/PessoaResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/errorhandling/ControllerAdvisor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/model/Credenciais.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/model/Endereco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/model/Pedido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/model/Pessoa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/model/Produto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/model/Venda.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/repository/CredenciaisRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/repository/EnderecoRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/repository/PedidoRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/repository/PessoaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/repository/ProdutoRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/service/CredenciaisService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/service/PessoaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufrn/br/aulaspringrest/service/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/projeto_web_residencia/service/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ufrn/br/aulaspringrest/AulaSpringRestApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/projeto_web_residencia/AulaSpringRestApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -68,13 +70,10 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
+  &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2WAyFCt8ylyM4PgZYMvnVisBP6H" />
+  <component name="ProjectId" id="2WBEkZBiTJ4oiTzHkTo7eKemsFj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -88,15 +87,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/marco/OneDrive/Documentos/webresidencia/projeto_web_residencia",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/marco/OneDrive/Documentos/AulaSpringRest/src/main/java/com/example/projeto_web_residencia/service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.general",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -107,45 +107,49 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\marco\OneDrive\Documentos\webresidencia\projeto_web_residencia\src\main\resources" />
-      <recent name="C:\Users\marco\OneDrive\Documentos\webresidencia\projeto_web_residencia\src\main\java\com\example\projeto_web_residencia" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.projeto_web_residencia.service" />
-      <recent name="com.example.projeto_web_residencia.controller" />
-      <recent name="com.example.projeto_web_residencia.dto" />
+      <recent name="C:\Users\marco\OneDrive\Documentos\AulaSpringRest\src\main\java\com\example\projeto_web_residencia\service" />
+      <recent name="C:\Users\marco\OneDrive\Documentos\AulaSpringRest\src\main\java\com\example\projeto_web_residencia\repository" />
+      <recent name="C:\Users\marco\OneDrive\Documentos\AulaSpringRest\src\main\java\com\example\projeto_web_residencia\model" />
+      <recent name="C:\Users\marco\OneDrive\Documentos\AulaSpringRest\src\main\java\com\example\projeto_web_residencia\controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProjetoWebResidenciaApplication">
-    <configuration name="AulaSpringRestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.AulaSpringRestApplication (1)">
+    <configuration name="AulaSpringRestApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="AulaSpringRest" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.projeto_web_residencia.AulaSpringRestApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.projeto_web_residencia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjetoWebResidenciaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="projeto_web_residencia" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.projeto_web_residencia.ProjetoWebResidenciaApplication" />
+    <configuration name="AulaSpringRestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AulaSpringRest" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ufrn.br.aulaspringrest.AulaSpringRestApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.AulaSpringRestApplication (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="125cd1e8-db9c-4a17-ad8d-63d06b4e5a78" name="Changes" comment="" />
-      <created>1696189575787</created>
+      <changelist id="71ea402c-95f6-437f-9107-3dee5df80f64" name="Changes" comment="" />
+      <created>1696197717129</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1696189575787</updated>
-      <workItem from="1696189576834" duration="7562000" />
-      <workItem from="1696197187007" duration="516000" />
-      <workItem from="1696199155029" duration="762000" />
-      <workItem from="1696199932778" duration="425000" />
-      <workItem from="1696200423070" duration="1023000" />
-      <workItem from="1696201571186" duration="854000" />
+      <updated>1696197717129</updated>
+      <workItem from="1696197718258" duration="2649000" />
+      <workItem from="1696200391130" duration="5536000" />
     </task>
     <servers />
   </component>
