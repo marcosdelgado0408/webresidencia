@@ -1,10 +1,12 @@
 package com.example.projeto_web_residencia.controller;
 
+import com.example.projeto_web_residencia.dto.EstudanteDTO;
 import com.example.projeto_web_residencia.model.Estudante;
 import com.example.projeto_web_residencia.repository.EstudanteRepository;
 import com.example.projeto_web_residencia.service.EstudanteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,22 +26,29 @@ public class EstudanteController {
 
 
     @GetMapping
-    public Page<Estudante> retornarEstudantes(Pageable pageable){
+    public Page<EstudanteDTO> retornarEstudantes(Pageable pageable){
 
-        return estudanteRepository.findAll(pageable);
+        Page<Estudante> estudantes = estudanteRepository.findAll(pageable);
+
+        return EstudanteDTO.convert(estudantes);
     }
 
     @GetMapping(value = "/{matricula}")
-    public ResponseEntity<Estudante> findById(@PathVariable long matricula){
+    public ResponseEntity<EstudanteDTO> findById(@PathVariable long matricula){
+
         Estudante obj = this.service.findById(matricula);
-        return ResponseEntity.ok().body(obj);
+
+        return ResponseEntity.ok().body(new EstudanteDTO(obj));
     }
 
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Estudante adicionarEstudantes(@RequestBody Estudante estudante){
-        return estudanteRepository.save(estudante);
+    public EstudanteDTO adicionarEstudantes(@RequestBody Estudante estudante){
+
+        estudanteRepository.save(estudante);
+
+        return new EstudanteDTO(estudante);
     }
 
     @DeleteMapping
@@ -50,9 +59,12 @@ public class EstudanteController {
 
     @PutMapping(value = "/{matricula}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public ResponseEntity<Estudante> update(@PathVariable long matricula, @RequestBody Estudante obj){
-        Estudante newObj = service.update(matricula, obj);
-        return ResponseEntity.ok().body(newObj);
+    public ResponseEntity<EstudanteDTO> update(@PathVariable long matricula, @RequestBody Estudante estudante){
+        Estudante newObj = service.update(matricula, estudante);
+
+        EstudanteDTO estudanteDTO = new EstudanteDTO(newObj);
+
+        return ResponseEntity.ok().body(estudanteDTO);
     }
 
 

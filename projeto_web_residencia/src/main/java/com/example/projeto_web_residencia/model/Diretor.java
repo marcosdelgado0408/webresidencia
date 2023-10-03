@@ -28,7 +28,8 @@ public class Diretor implements Serializable {
     private boolean deleted = Boolean.FALSE;
 
 
-    @OneToOne (mappedBy = "diretor")
+    @OneToOne
+    @JoinColumn(name="escola_cnpj")
     private Escola escola;
 
     public long getCpf() {

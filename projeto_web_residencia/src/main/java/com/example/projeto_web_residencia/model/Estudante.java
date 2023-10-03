@@ -37,6 +37,7 @@ public class Estudante implements Serializable {
     private int ano;
     private String nivelEnsino;
 
+
     public long getMatricula() {
         return matricula;
     }

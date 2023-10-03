@@ -1,6 +1,7 @@
 package com.example.projeto_web_residencia.controller;
 
 
+import com.example.projeto_web_residencia.dto.MateriaDTO;
 import com.example.projeto_web_residencia.model.Materia;
 import com.example.projeto_web_residencia.repository.MateriaRepository;
 import com.example.projeto_web_residencia.service.MateriaService;
@@ -11,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/materias")
@@ -25,22 +25,29 @@ public class MateriaController {
 
 
     @GetMapping
-    public Page<Materia> retornarMaterias(Pageable pageable){
+    public Page<MateriaDTO> retornarMaterias(Pageable pageable){
 
-        return materiaRepository.findAll(pageable);
+        Page<Materia> materias = materiaRepository.findAll(pageable);
+
+        return MateriaDTO.convert(materias);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Materia> findById(@PathVariable long id){
+    public ResponseEntity<MateriaDTO> findById(@PathVariable long id){
+
         Materia obj = this.service.findById(id);
-        return ResponseEntity.ok().body(obj);
+
+        return ResponseEntity.ok().body(new MateriaDTO(obj));
     }
 
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Materia adicionarMaterias(@RequestBody Materia materia){
-        return materiaRepository.save(materia);
+    public MateriaDTO adicionarMaterias(@RequestBody Materia materia){
+
+        materiaRepository.save(materia);
+
+        return new MateriaDTO(materia);
     }
 
     @DeleteMapping
@@ -51,9 +58,12 @@ public class MateriaController {
 
     @PutMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public ResponseEntity<Materia> update(@PathVariable long id, @RequestBody Materia obj){
+    public ResponseEntity<MateriaDTO> update(@PathVariable long id, @RequestBody Materia obj){
         Materia newObj = service.update(id, obj);
-        return ResponseEntity.ok().body(newObj);
+
+        MateriaDTO materiaDTO = new MateriaDTO(newObj);
+
+        return ResponseEntity.ok().body(materiaDTO);
     }
 
 

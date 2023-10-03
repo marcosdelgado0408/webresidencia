@@ -1,11 +1,13 @@
 package com.example.projeto_web_residencia.model;
 
 
+import com.example.projeto_web_residencia.dto.EstudanteDTO;
 import jakarta.persistence.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,15 +27,14 @@ public class Escola implements Serializable {
     private String nome;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "cpf_diretor")
+    @JoinColumn(name = "diretor_cpf")
     private Diretor diretor;
 
     private String endereco;
     private boolean deleted = Boolean.FALSE;
 
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval=true)
     private List<Estudante> estudantes;
 
 
@@ -75,5 +76,13 @@ public class Escola implements Serializable {
 
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
+    }
+
+    public List<Estudante> getEstudantes() {
+        return estudantes;
+    }
+
+    public void setEstudantes(List<Estudante> estudantes) {
+        this.estudantes = estudantes;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.projeto_web_residencia.controller;
 
+import com.example.projeto_web_residencia.dto.EscolaDTO;
 import com.example.projeto_web_residencia.model.Escola;
 import com.example.projeto_web_residencia.repository.EscolaRepository;
 import com.example.projeto_web_residencia.service.EscolaService;
@@ -24,21 +25,29 @@ public class EscolaController {
 
 
     @GetMapping
-    public Page<Escola> retornarEscola(Pageable pageable){
-        return escolaRepository.findAll(pageable);
+    public Page<EscolaDTO> retornarEscola(Pageable pageable){
+
+        Page<Escola> escolas = escolaRepository.findAll(pageable);
+
+        return EscolaDTO.convert(escolas);
     }
 
     @GetMapping(value = "/{cnpj}")
-    public ResponseEntity<Escola> findById(@PathVariable long cnpj){
+    public ResponseEntity<EscolaDTO> findById(@PathVariable long cnpj){
+
         Escola obj = this.service.findById(cnpj);
-        return ResponseEntity.ok().body(obj);
+
+        return ResponseEntity.ok().body(new EscolaDTO(obj));
     }
 
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Escola adicionarEscolas(@RequestBody Escola escola){
-        return escolaRepository.save(escola);
+    public EscolaDTO adicionarEscolas(@RequestBody Escola escola){
+
+        escolaRepository.save(escola);
+
+        return new EscolaDTO(escola);
     }
 
     @DeleteMapping
@@ -49,9 +58,12 @@ public class EscolaController {
 
     @PutMapping(value = "/{cnpj}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public ResponseEntity<Escola> update(@PathVariable long cnpj, @RequestBody Escola obj){
+    public ResponseEntity<EscolaDTO> update(@PathVariable long cnpj, @RequestBody Escola obj){
         Escola newObj = service.update(cnpj, obj);
-        return ResponseEntity.ok().body(newObj);
+
+        EscolaDTO escolaDTO = new EscolaDTO(newObj);
+
+        return ResponseEntity.ok().body(escolaDTO);
     }
 
 
